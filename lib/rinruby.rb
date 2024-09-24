@@ -167,7 +167,7 @@ def initialize(*args)
     @writer = @engine
     raise "Engine closed" if @engine.closed?
     @writer.puts <<-EOF
-      assign("#{RinRuby_Env}", new.env(), baseenv())
+      assign("#{RinRuby_Env}", new.env(), envir = globalenv())
     EOF
     @socket = nil
     r_rinruby_socket_io
